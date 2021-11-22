@@ -1,0 +1,258 @@
+version: "2.0"
+# 作为人发出的一些信号
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - good afternoon
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+    - see you next day
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: whoareyou
+  examples: |
+    - what is your name
+    - tell me your name
+    - what others call you
+    - what should I call you
+
+- intent: whattodo
+  examples: |
+    - What features do you support
+    - What functions do you have
+    - What can you do
+    - What can you do
+
+- intent: thanks
+  examples: |
+    - Thank you
+    - thanks
+    - thank you
+    - Thank you so much for helping me
+    - Thank you for helping me a lot
+    - You helped me a lot. Thank you, Xiao Zhi
+    - Thank you very much
+    - Thanks
+
+- intent: add_customer
+  examples: |
+    - I want to sign up a customer
+    - I want to add a customer
+    - Please insert the information of customer
+    - Please add a customer
+    - I want to load a customer
+    - Please load a customer in database
+    - add customer
+
+- intent: find_goods
+  examples: |
+    - I want to find a goods
+    - Please find the information of goods
+    - Please find a goods in database
+    - find goods
+    - find
+- intent: buy_goods
+  examples: |
+    - I want to buy a goods
+    - Please help me buy a goods
+    - want goods
+    - buy goods
+    - buy
+- intent: buy_goods
+  examples: |
+    - I want to buy a goods
+    - buy goods
+    - buy
+- intent: checkout
+  examples: |
+    - I want to check out
+    - check out
+    - bill
+    - pay bill
+    - pay money
+
+# - intent: clean
+#   examples: |
+#     - I want to exit the chatbot
+#     - check out
+#     - bill
+#     - pay bill
+#     - pay money
+- intent: say_goods
+  examples: |
+    - [wear]{"entity":"GoodsName","value":"wear"}
+    - [soap]{"entity":"GoodsName","value":"soap"}
+    - [towel]{"entity":"GoodsName","value":"towel"}
+    - [stationery]{"entity":"GoodsName","value":"stationery"}
+    - commidity's Name is [wear](GoodsName)
+    - commidity's Name is [soap](GoodsName)
+    - commidity's Name is [shampoo](GoodsName)
+    - Goods's Name is [wear](GoodsName)
+    - Goods's Name is [shampoo](GoodsName)
+    - Goods's Name is [towel](GoodsName)
+    - [wear](GoodsName)
+
+
+- intent: say_Name
+  examples: |
+    - [Prateek]{"entity":"Name","value":"Prateek"}
+    - [Jasmeet]{"entity":"Name","value":"Jasmeet"}
+    - [John]{"entity":"Name","value":"John"}
+    - [Kratos]{"entity":"Name","value":"Kratos"}
+    - Hi, Customer's Name is [Prateek](Name)
+    - Hi, Customer's Name is [Jasmeet](Name)
+    - Hi, Customer's Name is [John](Name)
+    - Hi, Customer's Name is [Kratos](Name)
+    - Customer's Name is [Prateek](Name)
+    - Customer's Name is [Jasmeet](Name)
+    - Customer's Name is [John](Name)
+    - Customer's Name is [Kratos](Name)
+    - [prateek](Name)
+
+
+- intent: say_Address
+  examples: |
+    - [NanJing](Address)
+    - [BeiJing](Address)
+    - [GuangDong](Address)
+    - [JiangNing](Address)
+    - The Customer address is [Oulu](Address)
+    - The Customer address is [US](Address)
+    - The Customer address is [Japna](Address)
+    - The Customer address is [KereanJ](Address)
+    - The Customer address is [XiaoLouzi](Address)
+    - The Customer address is [KongZhuang](Address)
+    - The Customer address is [XiaYi](Address)
+    - The Customer address is [ShangQiu](Address)
+    - [ShangQiu](Address)
+
+- intent: say_Phone
+  examples: |
+    - [8209829808](Phone)
+    - [8209829808](Phone)
+    - [8209829808](Phone)
+    - [8209829808](Phone)
+    - Hi, The Phone is [8209829808](Phone)
+    - Hi, The Phone is [8209829808](Phone)
+    - Hi, The Phone is [8209829808](Phone)
+    - Hi, The Phone is [8209829808](Phone)
+    - The Phone is [8209829808](Phone)
+    - The Phone is [8209829808](Phone)
+    - The Phone is [8209829808](Phone)
+    - You can contact them at [8209829808](Phone)
+    - You can contact them at [8209829808](Phone)
+    - You can contact them at [8209829808](Phone)
+    - [8209829808](Phone)
+    - the Phone is [8209829808](Phone)
+
+- intent: say_buygoods
+  examples: |
+    - buy [wear]{"entity":"GoodsNameBuy","value":"wear"}
+    - buy [stationery]{"entity":"GoodsNameBuy","value":"stationery"}
+    - buy [towel]{"entity":"GoodsNameBuy","value":"towel"}
+    - buy [soap]{"entity":"GoodsNameBuy","value":"soap"}
+    - I want to buy [soap](GoodsNameBuy)
+    - I want to buy [towel](GoodsNameBuy)
+    - I want to buy [wear](GoodsNameBuy)
+    - buy Goods's Name is [wear](GoodsNameBuy)
+    - buy Goods's Name is [stationery](GoodsNameBuy)
+    - buy Goods's Name is [wear](GoodsNameBuy)
+    - buy [shampoo](GoodsNameBuy)
+    
+
+- intent: select_all
+  examples: |
+    - Show me my Information
+    - Give me the information of address
+    - Display all information of address
+    - Display all entries about me
+    - Show me my information about address
+    - Show information
+    - show details
+    - show records
+
+- intent: select_allshopping
+  examples: |
+    - Show me the Customer's Card
+    - Give me the card of Customer
+    - Display the card of Customer
+    - Display all shopping 
+    - Show me my card 
+    - Show shopping card
+    - show details shopping card
+    - show card
+    - shooping card
+
+- intent: delete_customer
+  examples: |
+    - Delete [Prateek](Name) from table
+    - Drop [Jasmeet](Name)
+    - Remove [Paras](Name)
+    - remove [jasmeet](Name) from table
+    - remove [prateek](Name) from table
+
+# - intent: delete_goods
+#   examples: |
+#     - I want to delete a goods
+#     - delete a goods
+#     - delete a goods in database
+#     - delete goods
+#     - delete
+- intent: delete_shopping
+  examples: |
+    - Delete [wear](GoodsNameBuy) from records
+    - Drop [stationery](GoodsNameBuy)
+    - Remove [wear](GoodsNameBuy)
+    - remove [soap](GoodsNameBuy) from records
+    - remove [shampoo](GoodsNameBuy) from records
+    - Delete [wear](GoodsNameBuy) from records
+    - Drop [soap](GoodsNameBuy)
+    - Remove [wear](GoodsNameBuy)
+    - remove [soap](GoodsNameBuy) from records
+    - remove [shampoo](GoodsNameBuy) from records
+    - Drop [wear](GoodsNameBuy)
+    - Remove [soap](GoodsNameBuy)
+    - remove [towel](GoodsNameBuy) from records
+    - remove [shampoo](GoodsNameBuy) from records

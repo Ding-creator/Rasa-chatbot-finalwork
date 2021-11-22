@@ -1,0 +1,13 @@
+version: "2.0"
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: action_delete_card
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: affirm
+  - action: utter_answer_affirm

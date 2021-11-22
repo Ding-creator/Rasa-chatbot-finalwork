@@ -1,0 +1,158 @@
+version: '2.0'
+config:
+  store_entities_as_slots: true
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- greet:
+    use_entities: true
+- goodbye:
+    use_entities: true
+- affirm:
+    use_entities: true
+- deny:
+    use_entities: true
+- whoareyou:
+    use_entities: true
+- whattodo:
+    use_entities: true
+- thanks:
+    use_entities: true
+- find_goods:
+    use_entities: true
+- buy_goods:
+    use_entities: true
+- clean:
+    use_entities: true
+- say_goods:
+    use_entities:
+    - GoodsName
+- say_Name:
+    use_entities:
+    - Name
+- say_Address:
+    use_entities:
+    - Address
+- say_Phone:
+    use_entities:
+    - Phone
+- say_buygoods:
+    use_entities:
+    - GoodsNameBuy
+- select_goods:
+    use_entities: true
+- add_customer:
+    use_entities: true
+- select_all:
+    use_entities: true
+- delete_customer:
+    use_entities: true
+- delete_shopping:
+    use_entities: true
+- select_allshopping:
+    use_entities: true
+- checkout:
+    use_entities: true
+entities:
+- Name
+- Address
+- Phone
+- GoodsName
+- GoodsNameBuy
+slots:
+  Name:
+    type: rasa.shared.core.slots.AnySlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+  Address:
+    type: rasa.shared.core.slots.AnySlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+  Phone:
+    type: rasa.shared.core.slots.AnySlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+  GoodsName:
+    type: rasa.shared.core.slots.AnySlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+  GoodsNameBuy:
+    type: rasa.shared.core.slots.AnySlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+responses:
+  utter_answer_greet:
+  - text: Hello! May I help you?
+  - text: Hello! Glad to serve you. Please say the function you want to query
+  utter_answer_affirm:
+  - text: Well, I'm glad I can help you solve the problem
+  - text: Well, what else can I do for you?
+  utter_cheer_up:
+  - image: https://i.imgur.com/nGF1K8f.jpg
+    text: 'Here is something to cheer you up:'
+  utter_answer_goodbye:
+  - text: goodbye
+  - text: Bye
+  - text: 'although I am reluctant to part with everything, there is no banquet in the world. I wish you well! '
+  - text: 'I look forward to seeing you next time! '
+  - text: well, remember me when you need it next time
+  - text: 'see you! '
+  utter_answer_whattodo:
+  - text: good
+  utter_answer_deny:
+  - text: master, are you unhappy? Don't leave me
+  - text: "what's the matter, master? "
+  utter_answer_whoareyou:
+  - text: Hello! I'm Xiao Chen, your AI intelligent assistant
+  utter_answer_thanks:
+  - text: well. You're welcome
+  - text: this is what I should do, master
+  - text: 'uh huh, happy cooperation! '
+  utter_ask_name:
+  - text: What is your name master?
+  utter_ask_address:
+  - text: What is your address master?
+  utter_ask_phone:
+  - text: What is your phone number master?
+  utter_ask_goods:
+  - text: What do you want to inquire about goods master?
+  utter_ask_goodsname:
+  - text: Do you want to buy goods master? Please say name
+  utter_display_details:
+  - text: 'Thanks! Your information is Saving info - Name: {Name}, Address: {Address}, Phone: {Phone}.'
+  utter_display_details_buy:
+  - text: 'Thanks! Add card sucessfully and Saving info - Name: {Name}, Price: {Price}, Shop: {Shop}.'
+  utter_default:
+  - text: Say again
+actions:
+- utter_answer_affirm
+- utter_answer_deny
+- utter_answer_greet
+- utter_answer_goodbye
+- utter_answer_thanks
+- utter_answer_whoareyou
+- utter_answer_whattodo
+- utter_display_details
+- action_ask_name
+- action_ask_address
+- action_ask_phone
+- action_save_customer
+- action_select_all
+- action_delete_customer
+- action_default
+- action_select_goods
+- action_ask_goodsname
+- action_buy_goods
+- action_buypre_goods
+- action_delete_shopping
+- action_select_allshopping
+- action_checkout
+- action_delete_card
+forms: {}
+e2e_actions: []

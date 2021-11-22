@@ -1,0 +1,228 @@
+version: "2.0"
+
+stories:
+
+- story: greet
+  steps:
+  - intent: greet
+  - action: utter_answer_greet
+  - intent: whoareyou
+  - action: utter_answer_whoareyou
+
+- story: say affirm with greet
+  steps:
+  - intent: greet
+  - action: utter_answer_greet
+  - intent: affirm
+  - action: utter_answer_affirm
+
+# - story: say affirm
+#   steps: 
+#   - intent: affirm
+#   - action: utter_answer_affirm
+
+- story: say no with greet
+  steps:
+  - intent: greet
+  - action: utter_answer_greet
+  - intent: deny
+  - action: utter_answer_deny
+
+- story: say no
+  steps:
+  - intent: deny
+  - action: utter_answer_deny
+
+# - story: say goodbye
+#   steps:
+#   - intent: goodbye
+#   - action: utter_answer_goodbye
+    
+- story: thanks with greet
+  steps:
+  - intent: greet
+  - action: utter_answer_greet
+  - intent: thanks
+  - action: utter_answer_thanks
+    
+- story: thanks
+  steps:
+  - intent: thanks
+  - action: utter_answer_thanks
+    
+- story: who are you with greet
+  steps:
+  - intent: greet
+  - action: utter_answer_greet
+  - intent: whoareyou
+  - action: utter_answer_whoareyou
+    
+- story: who are you
+  steps:
+  - intent: whoareyou
+  - action: utter_answer_whoareyou
+    
+- story: who are you with greet
+  steps:
+  - intent: greet
+  - action: utter_answer_greet
+  - intent: whoareyou
+  - action: utter_answer_whoareyou
+    
+- story: what to do
+  steps:
+  - intent: whattodo
+  - action: utter_answer_whattodo
+    
+- story: what to do with greet
+  steps:
+  - intent: greet
+  - action: utter_answer_greet
+  - intent: whattodo
+  - action: utter_answer_whattodo  
+
+- story: interactive_story_1
+  steps:
+  - intent: add_customer
+  - action: action_ask_name
+  - intent: say_Name
+    entities:
+    - Name: Prateek
+  - slot_was_set:
+    - Name: Prateek
+  - action: action_ask_address
+  - intent: say_Address
+    entities:
+    - Address: NanJing
+  - slot_was_set:
+    - Address: NanJing
+  - action: action_ask_phone
+  - intent: say_Phone
+    entities:
+    - Phone: 8209829808
+  - slot_was_set:
+    - Phone: 8209829808
+  - action: action_save_customer
+  - intent: select_all
+  - action: action_select_all
+
+- story: interactive_story_2
+  steps:
+  - intent: select_all
+  - action: action_select_all
+  - intent: delete_customer
+    entities:
+    - Name: jasmeet
+  - slot_was_set:
+    - Name: jasmeet
+  - action: action_delete_customer
+  - intent: select_all
+  - action: action_select_all
+  - intent: add_customer
+  - action: action_ask_name
+  - intent: say_Name
+    entities:
+    - Name: Prateek
+  - slot_was_set:
+    - Name: Prateek
+  - action: action_ask_address
+  - intent: say_Address
+    entities:
+    - Address: NanJing
+  - slot_was_set:
+    - Address: NanJing
+  - action: action_ask_phone
+  - intent: say_Phone
+    entities:
+    - Phone: 8209829808
+  - slot_was_set:
+    - Phone: 8209829808
+  - action: action_save_customer
+  - intent: select_all
+  - action: action_select_all
+
+- story: interactive_story_3
+  steps:
+  - intent: find_goods
+  - action: action_ask_goodsname
+  - intent: say_goods
+    entities:
+    - GoodsName: gun
+  - slot_was_set:
+    - GoodsName: gun
+  - action: action_select_goods
+
+- story: interactive_story_4
+  steps:
+  - intent: buy_goods
+  - action: action_buypre_goods
+  - intent: say_buygoods
+    entities:
+    - GoodsNameBuy: gun
+  - slot_was_set:
+    - GoodsNameBuy: gun
+  - action: action_buy_goods
+  - intent: select_allshopping
+  - action: action_select_allshopping
+  - intent: delete_shopping
+    entities:
+    - GoodsNameBuy: gun
+  - slot_was_set:
+    - GoodsNameBuy: gun
+  - action: action_delete_shopping
+
+- story: delete goods form card
+  steps:
+  - intent: delete_shopping
+    entities:
+    - GoodsNameBuy: gun
+  - slot_was_set:
+    - GoodsNameBuy: gun
+  - action: action_delete_shopping
+
+- story: delete customer
+  steps:
+  - intent: delete_customer
+  - action: action_delete_customer
+
+- story: select all information
+  steps:
+  - intent: select_all
+  - action: action_select_all
+
+- story: pay bill
+  steps:
+  - intent: checkout
+  - action: action_checkout
+
+# - story: clean card
+#   steps:
+#   - intent: good
+#   - action: action_checkout
+
+# - story: happy path
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - intent: mood_great
+#   - action: utter_happy
+
+# - story: sad path 1
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - intent: mood_unhappy
+#   - action: utter_cheer_up
+#   - action: utter_did_that_help
+#   - intent: affirm
+#   - action: utter_happy
+
+# - story: sad path 2
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - intent: mood_unhappy
+#   - action: utter_cheer_up
+#   - action: utter_did_that_help
+#   - intent: deny
+#   - action: utter_goodbye
